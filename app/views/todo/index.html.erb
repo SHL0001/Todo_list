@@ -1,0 +1,13 @@
+<p>TODOLIST</p>
+
+<div>
+ <%= render partial: 'todo/form' %>
+</div>
+
+<div id="todo">
+  <%= render partial: "todo/todolist" %>
+</div>
+
+<div class="center1">
+<%= will_paginate @todos %>
+</div>

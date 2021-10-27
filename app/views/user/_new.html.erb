@@ -1,0 +1,18 @@
+
+<h1> Create User </h1>
+<%=form_for @user, url: '/user' do |t| %>
+<div class="center">
+<div class="panel-body">
+  <div>
+    <%= t.label :name %><br>
+   <%= t.text_field :name %>
+  </div>
+  <div>
+    <%= t.label :email %><br>
+  <%= t.text_field :email %>
+  </div>
+  <%= t.submit "Create" %>
+  </div>
+</div>
+</div>
+<% end %>

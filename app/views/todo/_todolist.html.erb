@@ -1,0 +1,6 @@
+
+<% @todos.each do |t| %>
+ <div class = "container" style="background-color: coral; margin: 10px;">
+ <%= render partial: 'todo/edit', locals: {todo: t} %>
+ </div>
+ <% end %>

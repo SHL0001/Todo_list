@@ -1,0 +1,26 @@
+
+<%= form_for todo do |f| %>
+    <div class="row">
+
+     <%= f.text_field :title%>
+
+      <%= f.datetime_field  :completed_at %>
+
+
+
+      <%= f.text_area :note %>
+
+
+     <%= f.select :priorty, ['High', 'Medium','Low'] %>
+
+
+
+       <%= button_to "update" ,todo_path(todo), method: :patch, remote: :true %>
+
+
+         <%= button_to "delete",todo_path(todo),
+                                              method: :delete,
+                                            data: { confirm: "Are you sure?" } %>
+     </div>
+<% end %>
+

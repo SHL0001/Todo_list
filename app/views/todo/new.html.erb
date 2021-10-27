@@ -1,0 +1,32 @@
+<%= form_with model: @todo do |t| %>
+
+  <div>
+    <%= t.label :title %><br>
+    <%= t.text_field :title %>
+  </div>
+  <div>
+    <%= t.label :completed_at %><br>
+    <%= t.datetime_select :completed_at %>
+  </div>
+  <div>
+    <%= t.label :note %><br>
+    <%= t.text_area :note %>
+  </div>
+  <div>
+    <%= t.submit %>
+  </div>
+
+<!--<div class="col-md-4"></div>-->
+<!--<div class="col-md-8">-->
+<!--  <input type="checkbox" class="form-check-input" id="check">-->
+<!--  <input type="text" placeholder="Add new task" style="width:30%">-->
+  <%#= t.text :title%>
+
+<!--  <input type="datetime-local">-->
+  <%#= t.completed_at %>
+
+<!--  <input type="text">-->
+  <%#= t.note %>
+<!--</div>-->
+
+<% end %>
