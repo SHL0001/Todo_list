@@ -3,9 +3,9 @@ class TodoController < ApplicationController
 
   def index
 
-    # @user = User.find
+     @user = User.find
     @todos = Todo.all.order("created_at desc")
-      @todo = Todo.new
+    @todo = Todo.new
 
     # @todos = Todo.all.order("created_at desc").limit(10).offset(@page * 10)
     # @todos = Todo.all.paginate :page => params[:page], :order => ("created_at desc")
@@ -27,7 +27,7 @@ class TodoController < ApplicationController
   # end
 
   def create
-    @todo = Todo.new(todoo_params)
+    @todo = Todo.new(todo_params)
     if @todo.save
       redirect_to todo_index_path
     else
@@ -48,7 +48,7 @@ class TodoController < ApplicationController
   def update
 
     @todo = Todo.find(params[:id])
-    if @todo.update(todoo_params)
+    if @todo.update(todo_params)
       redirect_to todo_index_path
     else
       render :edit
@@ -62,7 +62,7 @@ class TodoController < ApplicationController
   end
 
   private
-    def todoo_params
+    def todo_params
       params.require(:todo).permit(:title, :completed_at, :note, :priorty)
     end
  # "#{ def set_page
